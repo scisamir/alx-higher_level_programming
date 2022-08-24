@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 def uppercase(str):
-    l = abs(len(str))
-    for i in range(l):
-        s = abs(ord('str[i]'))
-        if s >= ord('a') and s <= ord('z'):
-            str[i] == chr(s - 32)
+    length = len(str)
+    for i in range(length):
+        char = str[i]
+        char_ord = ord(char)
+        if char_ord >= ord('a') and char_ord <= ord('z'):
+            up_char = char_ord - 32
+            str[i] == chr(up_char)
     print("{}".format(str))
