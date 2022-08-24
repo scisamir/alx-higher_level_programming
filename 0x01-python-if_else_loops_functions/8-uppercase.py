@@ -9,4 +9,6 @@ def uppercase(str):
             up_char = char_ord - 32
             charc = chr(up_char)
             new_str += charc
-    print("{}".format(new_str)
+    print("{}".format(new_str))
+
+uppercase("holberton")
