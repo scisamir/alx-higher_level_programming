@@ -8,4 +8,4 @@ def uppercase(str):
         if char_ord >= ord('a') and char_ord <= ord('z'):
             up_char = char_ord - 32
             new_str.append(chr(up_char))
-    print("{}".format(*new_str))
+    print("{}".format(new_str))
