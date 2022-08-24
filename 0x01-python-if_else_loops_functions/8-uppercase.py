@@ -7,8 +7,7 @@ def uppercase(str):
         char_ord = ord(char)
         if char_ord >= ord('a') and char_ord <= ord('z'):
             up_char = char_ord - 32
-            charc = chr(up_char)
-            new_str += charc
+            new_str += chr(up_char)
+        else:
+            new_str += char
     print("{}".format(new_str))
-
-uppercase("holberton")
