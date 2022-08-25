@@ -10,7 +10,6 @@ if __name__ == "__main__":
             print("1 argument:")
         else:
             print("{} arguments:".format(l))
-    for i in range (l):
-        j = i + 1
-        print("{}: {}".format(j, argv[j]))
-
+        for i in range (l):
+            j = i + 1
+            print("{}: {}".format(j, argv[j]))
