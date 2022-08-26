@@ -8,9 +8,8 @@ if __name__ == "__main__":
     else:
         if l == 1:
             print("1 argument:")
-            print("1: {}".format(argv[1]))
         else:
             print("{} arguments:".format(l))
-    for i in range (l):
-        j = i + 1
-        print("{}: {}".format(j, argv[j]))
+        for i in range (l):
+            j = i + 1
+            print("{}: {}".format(j, argv[j]))
