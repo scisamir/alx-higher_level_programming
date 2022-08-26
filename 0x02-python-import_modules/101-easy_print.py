@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-from sys import stdout
-stdout.write("#pythoniscool")
+import logging
+
+logging.basicConfig(format='%(message)s')
+log = logging.getLogger(__name__)
+log.warning('#pythoniscool')
