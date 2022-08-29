@@ -5,15 +5,19 @@ def no_c(my_string):
     for i in my_string:
         liss.append(i)
 
-    cout = liss.count('c')
-    if cout == 0:
+    cout = liss.count('C')
+    coutc = liss.count('c')
+    if cout == 0 and coutc == 0:
         return my_string
 
-    for j in range(cout):
-        liss.remove('c')
+    if cout == 0 and coutc > 0:
+        for j in range(coutc):
+            liss.remove('c')
 
-    for k in range(len(liss)):
+    if coutc == 0 and cout > 0:
+        for k in range(cout):
+            liss.remove('C')
+
+    for l in range(len(liss)):
         strg += liss[k]
     return strg
-
-print(no_c("Best School"))
