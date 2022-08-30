@@ -18,6 +18,12 @@ def no_c(my_string):
         for k in range(cout):
             liss.remove('C')
 
-    for l in range(len(liss)):
-        strg += liss[l]
+    if coutc > 0 and cout > 0:
+        for l in range(cout):
+            liss.remove('C')
+        for m in range(coutc):
+            liss.remove('c')
+
+    for n in range(len(liss)):
+        strg += liss[n]
     return strg
