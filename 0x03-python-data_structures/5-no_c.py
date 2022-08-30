@@ -19,9 +19,9 @@ def no_c(my_string):
             liss.remove('C')
 
     if coutc > 0 and cout > 0:
-        for l in range(cout):
+        for j in range(cout):
             liss.remove('C')
-        for m in range(coutc):
+        for k in range(coutc):
             liss.remove('c')
 
     for letter in liss:
