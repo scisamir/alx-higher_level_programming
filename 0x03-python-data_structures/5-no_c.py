@@ -2,8 +2,8 @@
 def no_c(my_string):
     liss = []
     strg = ""
-    for i in my_string:
-        liss.append(i)
+    for alpha in my_string:
+        liss.append(alpha)
 
     cout = liss.count('C')
     coutc = liss.count('c')
