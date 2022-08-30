@@ -24,6 +24,6 @@ def no_c(my_string):
         for m in range(coutc):
             liss.remove('c')
 
-    for n in range(len(liss)):
-        strg += liss[n]
+    for letter in liss:
+        strg += letter
     return strg
