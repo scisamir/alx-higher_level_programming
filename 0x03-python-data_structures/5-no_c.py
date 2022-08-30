@@ -19,5 +19,5 @@ def no_c(my_string):
             liss.remove('C')
 
     for l in range(len(liss)):
-        strg += liss[k]
+        strg += liss[l]
     return strg
