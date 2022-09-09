@@ -4,4 +4,3 @@ def uniq_add(my_list=[]):
     for item in set(my_list):
         sum += item
     return sum
-
