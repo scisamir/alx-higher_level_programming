@@ -3,7 +3,9 @@ def uppercase(str):
     strlen = 0
     for letter in str:
         strlen += 1
+        let_ascii = ord(letter)
         if ord(letter) >= 97 and ord(letter) <= 122:
-            print(chr(ord(letter) - 32), end='' if strlen < len(str) else "\n")
-        else:
-            print("{}".format(letter), end='' if strlen < len(str) else "\n")
+            let_ascii -= 32
+        lett = chr(let_ascii)
+        print("{}".format(lett), end='')
+    print()
