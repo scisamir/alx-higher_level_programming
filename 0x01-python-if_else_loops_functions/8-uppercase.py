@@ -6,4 +6,4 @@ def uppercase(str):
         if ord(letter) >= 97 and ord(letter) <= 122:
             print(chr(ord(letter) - 32), end='' if strlen < len(str) else "\n")
         else:
-            print(letter, end='' if strlen < len(str) else "\n")
+            print("{}".format(letter), end='' if strlen < len(str) else "\n")
