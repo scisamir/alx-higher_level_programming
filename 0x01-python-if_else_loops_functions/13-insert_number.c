@@ -71,5 +71,5 @@ listint_t *insert_node(listint_t **head, int number)
 		ptr = ptr->next;
 	}
 
-	return (NULL);
+	return (insert_at_pos(head, number, pos));
 }
