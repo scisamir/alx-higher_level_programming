@@ -69,13 +69,15 @@ class Square:
         if (self.__position)[1]:
             nwl = "\n" * (self.__position)[1]
         else:
-            nwl = "\n"
+            nwl = ""
 
         if self.__size == 0:
             print()
         else:
+            if nwl != "":
+                print(nwl, end="")
             for i in range(0, self.__size):
                 print(sp, end="")
                 for j in range(0, self.__size):
                     print("#", end="")
-                print(nwl, end="")
+                print()
