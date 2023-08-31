@@ -46,7 +46,8 @@ class Square:
 
         if isinstance(value, tuple) and len(value) == 2:
             if type(value[0]) == int and type(value[1]) == int:
-                isvalid = True
+                if value[0] >= 0 and value[1] >= 0:
+                    isvalid = True
         if isvalid:
             self.__position = value
         else:
@@ -65,6 +66,11 @@ class Square:
         else:
             sp = ""
 
+        if (self.__position)[1]:
+            nwl = "\n" * (self.__position)[1]
+        else:
+            nwl = "\n"
+
         if self.__size == 0:
             print()
         else:
@@ -72,4 +78,4 @@ class Square:
                 print(sp, end="")
                 for j in range(0, self.__size):
                     print("#", end="")
-                print()
+                print(nwl, end="")
