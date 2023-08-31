@@ -38,7 +38,7 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """ Updates the current square position """
 
