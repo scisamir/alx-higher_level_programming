@@ -5,9 +5,10 @@ def list_division(my_list_1, my_list_2, list_length):
     a = 0
     b = 0
     divd = 0
+    i = 0
 
     try:
-        for i in range(list_length):
+        while i < list_length:
             a = my_list_1[i]
             b = my_list_2[i]
             try:
@@ -19,8 +20,10 @@ def list_division(my_list_1, my_list_2, list_length):
             except ZeroDivisionError:
                 print("division by 0")
                 new_list.append(0)
+            i += 1
     except IndexError:
         print("out of range")
-        new_list.append(0)
+        for j in range(i, list_length):
+             new_list.append(0)
     finally:
         return (new_list)
