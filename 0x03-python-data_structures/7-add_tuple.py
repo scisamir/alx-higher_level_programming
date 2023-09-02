@@ -10,8 +10,8 @@ def add_tuple(tuple_a=(), tuple_b=()):
     elif len(tuple_b) == 0:
         tuple_b = 0, 0
 
-    a, b = tuple_a
-    c, d = tuple_b
+    a, *c = tuple_a
+    b, *d = tuple_b
 
-    res = a + c, b + d
+    res = a + b, c[0] + d[0]
     return res
