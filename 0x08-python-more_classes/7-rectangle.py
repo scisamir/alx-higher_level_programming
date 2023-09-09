@@ -56,13 +56,15 @@ class Rectangle:
 
     def __str__(self):
         """ Returns the rectangle with the character # """
-        rect = ""
-
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rect += Rectangle.print_symbol
-            if i != self.__height - 1:
-                rect += "\n"
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            rect = ""
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    rect += str(self.print_symbol)
+                if i != self.__height - 1:
+                    rect += "\n"
 
         return rect
 
