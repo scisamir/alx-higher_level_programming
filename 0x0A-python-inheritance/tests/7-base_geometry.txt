@@ -1,0 +1,20 @@
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+>>> geometry = BaseGeometry()
+
+>>> geometry.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+>>> geometry.integer_validator("explen", 5)
+
+>>> geometry.integer_validator("explen", "invalid")
+Traceback (most recent call last):
+...
+TypeError: explen must be an integer
+
+>>> geometry.integer_validator("explen", -2)
+Traceback (most recent call last):
+...
+ValueError: explen must be greater than 0
