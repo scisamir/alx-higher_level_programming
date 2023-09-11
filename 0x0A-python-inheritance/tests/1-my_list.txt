@@ -1,0 +1,16 @@
+Import List Class
+	>>> own_list = __import__("1-my_list").MyList
+
+Create an instance
+	>>> my_list = own_list()
+
+Append numbers and print
+	>>> my_list.append(2)
+	>>> my_list.append(0)
+	>>> my_list.append(1)
+	>>> print(my_list)
+	[2, 0, 1]
+
+Print sorted list
+	>>> my_list.print_sorted()
+	[0, 1, 2]

@@ -7,9 +7,4 @@ class MyList(list):
 
     def print_sorted(self):
         """ Prints sorted list """
-        a = []
-        cp_list = list
-        num = 0
-
-        while cp_list != [] 
-
+        print(sorted(self))
