@@ -8,21 +8,22 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    if n == 1:
-        return [1]
 
-    arr = [1, 1]
+    res = []
 
-    if n == 2:
-        return arr
-    else:
-        i = 2
-        new_arr = [1]
+    if n >= 1:
+        res.append([1])
+    if n >= 2:
+        res.append([1, 1])
+    if n > 2:
+        arr = [1, 1]
 
-        while i < n:
+        for i in range(2, n):
+            new_arr = [1]
+
             for j in range(len(arr) - 1):
                 new_arr.append(arr[j] + arr[j + 1])
             new_arr.append(1)
             arr = new_arr
-            i += 1
-        return new_arr
+            res.append(new_arr)
+    return res
