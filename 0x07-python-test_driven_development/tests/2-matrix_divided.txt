@@ -57,3 +57,19 @@ div as an integer:
 Verify that original matrix was unchanged:
 	>>> print(matrix)
 	[[1, 2, 3], [4, 5, 6]]
+
+matrix= list of lists of integers / div= float(inf):
+	>>> print(matrix_divided(matrix, float("inf")))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Missing one argument:
+	>>> print(matrix_divided(matrix))
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Missing two argument:
+	>>> print(matrix_divided())
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
