@@ -39,39 +39,43 @@ void reverse_list(listint_t **head)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *list_copy = NULL, *ptr = NULL;
-	listint_t *comp = NULL, *comp2 = NULL;
+	listint_t *second_list = NULL, * temp = NULL;
+	listint_t *slow = NULL, *fast = NULL;
 
 	if (*head == NULL)
 		return (1);
 	if ((*head)->next == NULL)
 		return (1);
 
-	ptr = *head;
+	temp = *head, slow = *head, fast = *head;
 
-	while (ptr != NULL)
+	/* Separate list into two */
+	while (1)
 	{
-		add_nodeint_end(&list_copy, ptr->n);
-		ptr = ptr->next;
-	}
-
-	reverse_list(&list_copy);
-
-	comp = *head;
-	comp2 = list_copy;
-
-	while (comp != NULL)
-	{
-		if (comp->n != comp2->n)
+		fast = fast->next->next;
+		if (fast == NULL)
 		{
-			free_listint(list_copy);
-			return (0);
+			second_list = slow->next;
+			break;
 		}
-
-		comp = comp->next;
-		comp2 = comp2->next;
+		if (fast->next == NULL)
+		{
+			second_list = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
+	slow->next = NULL;
 
-	free_listint(list_copy);
+	/* Reverse second list */
+	reverse_list(&second_list);
+
+	/* Compare first and second lists */
+	while (second_list != NULL)
+	{
+		if (temp->n != second_list->n)
+			return (0);
+		second_list = second_list->next;
+	}
 	return (1);
 }
