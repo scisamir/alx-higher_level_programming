@@ -1,36 +1,6 @@
 #include "lists.h"
 
 /**
- * reverse_list - reverses a singly linked list
- * @head: a double pointer to the list to be reversed
- *
- * Return: Nothing
- */
-
-void reverse_list(listint_t **head)
-{
-	listint_t *temp = NULL, *ptr = NULL, *ptr2 = NULL;
-
-	temp = *head;
-	ptr = temp->next;
-	ptr2 = ptr->next;
-	temp->next = NULL;
-
-	while (ptr != NULL)
-	{
-		ptr->next = temp;
-		temp = ptr;
-		ptr = ptr2;
-
-		if (ptr2)
-			ptr2 = ptr2->next;
-	}
-
-	*head = temp;
-}
-
-
-/**
  * is_palindrome - checks if a singly linked list is a palindrome
  * @head: a doubler pointer to the list
  *
@@ -39,43 +9,43 @@ void reverse_list(listint_t **head)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *second_list = NULL, * temp = NULL;
-	listint_t *slow = NULL, *fast = NULL;
+	listint_t *ptr = NULL;
+	int *arr = NULL;
+	int i = 0, len = 0;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
 	if ((*head)->next == NULL)
 		return (1);
 
-	temp = *head, slow = *head, fast = *head;
+	ptr = *head;
 
-	/* Separate list into two */
-	while (1)
+	/* Get the length of the list */
+	while (ptr != NULL)
 	{
-		fast = fast->next->next;
-		if (fast == NULL)
-		{
-			second_list = slow->next;
-			break;
-		}
-		if (fast->next == NULL)
-		{
-			second_list = slow->next->next;
-			break;
-		}
-		slow = slow->next;
+		len++;
+		ptr = ptr->next;
 	}
-	slow->next = NULL;
+	ptr = *head;
 
-	/* Reverse second list */
-	reverse_list(&second_list);
-
-	/* Compare first and second lists */
-	while (second_list != NULL)
+	/* Copy list to array */
+	arr = malloc(sizeof(int) * len);
+	while (ptr != NULL)
 	{
-		if (temp->n != second_list->n)
+		arr[i++] = ptr->n;
+		ptr = ptr->next;
+	}
+
+	/* Determine if list is a palindrome */
+	for (i = 0; i < len / 2; i++)
+	{
+		if (arr[i] != arr[len - i - 1])
+		{
+			free(arr);
 			return (0);
-		second_list = second_list->next;
+		}
 	}
+
+	free(arr);
 	return (1);
 }
