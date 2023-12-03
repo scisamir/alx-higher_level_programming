@@ -2,6 +2,6 @@
 
 exports.converter = (base) => {
   return (num) => {
-    return (parseInt(num, base));
+    return (num.toString(base));
   };
 };
