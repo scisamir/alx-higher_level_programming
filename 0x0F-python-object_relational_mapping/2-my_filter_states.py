@@ -13,12 +13,11 @@ if __name__ == "__main__":
             user=argv[1],
             passwd=argv[2],
             db=argv[3],
-            charset="utf8"
             )
     cur = db.cursor()
     cur.execute(
-            "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC",
-            (str(argv[4]),)
+            "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
+            .format(argv[4])
             )
     rows = cur.fetchall()
 
