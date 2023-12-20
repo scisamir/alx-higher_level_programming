@@ -24,9 +24,10 @@ if __name__ == "__main__":
 
     for i, row in enumerate(rows):
         if (i + 1 == len(rows)):
-            print(row[0])
+            print(row[0], end="")
         else:
             print(row[0], end=", ")
+    print()
 
     cur.close()
     db.close()
