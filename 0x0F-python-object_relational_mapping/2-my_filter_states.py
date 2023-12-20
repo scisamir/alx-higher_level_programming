@@ -12,7 +12,8 @@ if __name__ == "__main__":
             port=3306,
             user=argv[1],
             passwd=argv[2],
-            db=argv[3]
+            db=argv[3],
+            charset="utf8"
             )
     cur = db.cursor()
     cur.execute(
@@ -23,3 +24,6 @@ if __name__ == "__main__":
 
     for row in rows:
         print(row)
+
+    cur.close()
+    db.close()
