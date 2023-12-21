@@ -22,4 +22,4 @@ if __name__ == "__main__":
 
     for instance in contains_a:
         session.delete(instance)
-        session.commit()
+    session.commit()
