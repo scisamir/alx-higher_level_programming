@@ -24,4 +24,4 @@ if __name__ == "__main__":
     for st in my_state:
         print(f"{st.id}: {st.name}")
         for ct in st.cities:
-            print(f"\t {ct.id}: {ct.name}")
+            print(f"    {ct.id}: {ct.name}")
